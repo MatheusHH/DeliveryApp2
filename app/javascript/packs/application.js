@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("packs/sbadmin2")
 require("packs/mobile")
+require("packs/jquery-easing")
 
 
 import "bootstrap";

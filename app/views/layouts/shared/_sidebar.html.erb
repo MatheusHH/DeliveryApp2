@@ -15,7 +15,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">    
         
-        <%= link_to "#", class: "nav-link" do %>
+        <%= link_to admin_root_path, class: "nav-link" do %>
         <i class="fas fa-tachometer-alt"></i>
         <span>Dashboard</span>
         <% end %>
@@ -27,8 +27,8 @@
     <hr class="sidebar-divider">
 
     <li class="nav-item">
-        <%= link_to "", class: "nav-link" do %>
-            <i class="fas fa-store"></i>
+        <%= link_to admin_products_path, class: "nav-link" do %>
+            <i class="fas fa-warehouse"></i>
             <span>Products</span></a>
         <% end %>
     </li>

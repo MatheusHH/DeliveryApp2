@@ -1,0 +1,49 @@
+<div class="card shadow p-3 mb-5">
+  <div class="card-header">Categoria </div>
+  <div class="card-body">
+    <p>
+      <strong><%= Product.human_attribute_name("image") %>:</strong>
+      <div>
+        <td><%= image_tag @product.image.variant(resize: "400x300") if @product.image.attached? %></td>
+      </div>  
+    </p>
+
+    <p>
+      <strong><%= Product.human_attribute_name("name") %>:</strong>
+      <%= @product.name %>
+    </p>
+
+    <p>
+      <strong><%= Product.human_attribute_name("description") %>:</strong>
+      <%= @product.description %>
+    </p>
+
+    <p>
+      <strong><%= Product.human_attribute_name("category") %>:</strong>
+      <%= @product.category.name %>
+    </p>
+
+    <p>
+      <strong><%= Product.human_attribute_name("status") %>:</strong>
+      <%= @product.status %>
+    </p>
+
+    <p>
+      <strong><%= Product.human_attribute_name("price") %>:</strong>
+      <%= @product.price %>
+    </p>
+
+    <p>
+      <strong><%= Product.human_attribute_name("user") %>:</strong>
+      <%= @product.user.id %>
+    </p>
+    
+    <div class="card-footer">
+    <div class="actions">
+      <%= link_to admin_products_path, class: "btn btn-info btn-icon-split btn-sm" do %>
+        <span class="text"> Voltar</span>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

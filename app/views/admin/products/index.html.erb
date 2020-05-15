@@ -1,0 +1,43 @@
+<div class="card shadow p-3 mb-5">
+  <div class="card-header" style="text-align: center">
+    <h3><%= @products.model_name.human(count: 2) %></h3>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= @products.human_attribute_name("image") %></th>
+            <th><%= @products.human_attribute_name("name") %></th>
+            <th><%= @products.human_attribute_name("price") %></th>
+            <th><%= @products.human_attribute_name("status") %></th>
+            <th><%= t('helpers.submit.actions') %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td><%= image_tag product.image.variant(resize: "100x100") if product.image.attached? %></td>
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= product.status %></td>
+              <td><%= link_to edit_admin_product_path(product), class: "btn btn-info btn-circle" do %><i class="fa fa-edit"></i><% end %>
+              <%= link_to admin_product_path(product), class: "btn btn-success btn-circle" do %><i class="fa fa-eye"></i><% end %>
+              <%= link_to admin_product_path(product), method: :delete, class: "btn btn-danger btn-circle", data: { confirm: t('confirm') } do  %> <i class="fa fa-trash"></i> <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+    
+    <div class="card-footer">
+      <%= link_to new_admin_product_path, class: "btn btn-primary btn-icon-split btn-sm" do %>
+       <i class="fas fa-plus"></i>
+       <span class="text"> <%= t('actions.new', model: @products.model_name.human) %></span>
+      <% end %>
+    </div>
+  </div>  
+</div>

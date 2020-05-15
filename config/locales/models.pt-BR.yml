@@ -25,3 +25,5 @@ pt-BR:
           image: Imagem
           description: Descrição
           price: Preço
+          category: Categoria
+          user: Criador

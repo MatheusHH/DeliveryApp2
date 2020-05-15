@@ -1,0 +1,22 @@
+<div class="card shadow p-3 mb-5">
+  <div class="card-header">Categoria </div>
+  <div class="card-body">
+    <p>
+      <strong><%= Category.human_attribute_name("name") %>:</strong>
+      <%= @category.name %>
+    </p>
+
+    <p>
+      <strong><%= Category.human_attribute_name("active") %>:</strong>
+      <%= @category.active %>
+    </p>
+    
+    <div class="card-footer">
+    <div class="actions">
+      <%= link_to admin_categories_path, class: "btn btn-info btn-icon-split btn-sm" do %>
+        <span class="text"> Voltar</span>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
