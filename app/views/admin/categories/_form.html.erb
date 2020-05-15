@@ -1,0 +1,49 @@
+<div class="card shadow p-3 mb-5">
+  <div class="card-body"> 
+    <%= form_with(model: [:admin, category], local: true) do |form| %>
+      <% if category.errors.any? %>
+        <div class="alert alert-alert" id="error_explanation">
+          <a href="#" data-dismiss="alert" class="close">×</a>
+          <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+            <% category.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
+        </div>    
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <%= form.label :active %>
+            <%= form.select :active, Category.actives.keys.to_a, {}, class: "form-control" %>
+          </div>
+        </div>    
+      </div>
+      
+
+      <div class="card-footer">
+        <%= button_tag type: 'submit', class: "btn btn-success btn-icon-split btn-sm" do %>
+          <i class="fas fa-check"></i>
+          <span class="text"> Save</span>
+        <% end %>
+
+        <%= link_to admin_categories_path, class: "btn btn-info btn-icon-split btn-sm" do %>
+            <i class="fas fa-backward"></i>
+            <span class="text"> Back</span>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

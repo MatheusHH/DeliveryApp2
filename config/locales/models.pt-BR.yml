@@ -1,0 +1,27 @@
+pt-BR:
+    activerecord:
+      models:
+        user:
+          one: Usuário
+          other: Usuários
+        category: 
+          one: Categoria
+          other: Categorias
+        product: 
+          one: Produto
+          other: Produtos
+  
+      attributes:
+        user:
+          name: Nome
+          email: Email
+          role: Tipo de Usuário
+        category:
+          name: Nome
+          active: Ativo
+          user: Criador
+        product:
+          title: Nome
+          image: Imagem
+          description: Descrição
+          price: Preço

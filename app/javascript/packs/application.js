@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("packs/sbadmin2")
+require("packs/mobile")
 
 
 import "bootstrap";
