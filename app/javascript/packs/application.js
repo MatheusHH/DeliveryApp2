@@ -10,6 +10,7 @@ require("channels")
 require("packs/sbadmin2")
 require("packs/mobile")
 require("packs/jquery-easing")
+require("packs/spin")
 
 
 import "bootstrap";

@@ -1,5 +1,4 @@
-class Site::ShoppingsController < ApplicationController
-  layout 'customer_layout'
+class Site::ShoppingsController < SiteController
   before_action :load_categories
 
   def index

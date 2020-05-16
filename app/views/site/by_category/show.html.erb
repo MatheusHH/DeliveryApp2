@@ -3,8 +3,13 @@
   <%= render partial: 'site/shared/sidebar' %>
 
   <div id="product-items" class="col-lg-9">
-
-    <%= render partial: 'site/shared/carousel' %>    
+    <br>
+    <div class="card">
+      <div class="card-header">
+        <%= @products.first.category.name %>
+      </div>
+    </div>
+    <br>
     <div class="row">
       <%= render partial: 'site/shared/products' %> 
     </div>

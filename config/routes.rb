@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   namespace :site do
     get 'shoppings/index'
+    resources :show_product, only: [:show]
+    resources :by_category, only: [:show]
   end
   
   root 'site/shoppings#index'
