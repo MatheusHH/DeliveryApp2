@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
   end
-
-  get 'shoppings/index'
-  root 'shoppings#index'
+  
+  namespace :site do
+    get 'shoppings/index'
+  end
+  
+  root 'site/shoppings#index'
 end

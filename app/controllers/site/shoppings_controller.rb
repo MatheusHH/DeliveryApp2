@@ -1,4 +1,4 @@
-class ShoppingsController < ApplicationController
+class Site::ShoppingsController < ApplicationController
   layout 'customer_layout'
   before_action :load_categories
 
