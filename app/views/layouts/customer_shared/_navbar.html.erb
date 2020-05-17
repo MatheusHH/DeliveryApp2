@@ -13,7 +13,9 @@
 						</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Customer</a>
+				  <%= link_to  customer_root_path, class: "nav-link" do %>
+					  <span>Customers</span>
+					<% end %>
 				</li>
 				<li class="nav-item">
           <%= link_to admin_root_path, class: "nav-link" do %>

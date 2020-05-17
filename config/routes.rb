@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers, path: 'customer/users', controllers: {registrations: 'customers/registrations'}
   devise_for :users, path: 'admin/users'
   namespace :admin do
     get 'dashboard/index'
@@ -6,6 +7,13 @@ Rails.application.routes.draw do
 
     resources :categories
     resources :products
+  end
+
+  namespace :customer do
+    get 'orders/index'
+    root 'orders#index'
+
+    resources :edit_profile, only: [:edit, :update]
   end
   
   namespace :site do

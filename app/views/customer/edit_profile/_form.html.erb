@@ -1,0 +1,72 @@
+<div class="card shadow p-3 mb-5"> 
+  <div class="card-body">
+    <%= form_with(model: [:customer, customer], url: customer_edit_profile_path(customer), local: true) do |form| %>
+      <% if customer.errors.any? %>
+        <div class="alert alert-alert" id="error_explanation">
+          <a href="#" data-dismiss="alert" class="close">×</a>
+          <h2><%= pluralize(customer.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+          <% customer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %> 
+
+      <%= form.fields_for :profile do |ff| %>
+        <div class="form-group row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <%= ff.text_field :cep, class: "form-control form-control-user", placeholder: "Digite o CEP", require: true %>
+          </div>
+          <div class="col-sm-6">
+            <%= ff.text_field :street, class: "form-control form-control-user", placeholder: "Digite o nome da Rua", require: true %>
+          </div>      
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <%= ff.text_field :neighborhood, class: "form-control form-control-user", placeholder: "Digite o nome do Bairro", require: true %>
+          </div>
+          <div class="col-sm-6">
+            <%= ff.text_field :city, class: "form-control form-control-user", placeholder: "Digite o nome da Cidade", require: true %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <%= ff.text_field :cellphone, class: "form-control form-control-user", placeholder: "Digite o seu celular", require: true %>
+          </div>
+          <div class="col-sm-6">
+            <%= ff.text_field :name, class: "form-control form-control-user", placeholder: "Digite seu nome", require: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= render_states_profile("state")  %>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <%= form.password_field :password, class: "form-control", placeholder: "Nova Senha" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirma Nova Senha" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <%= form.submit "Salvar", class: "btn btn-primary" %>
+        <%= link_to "Voltar", customer_root_path, class: "btn btn-success" %>
+      </div> 
+    <% end %>
+  </div>
+</div>

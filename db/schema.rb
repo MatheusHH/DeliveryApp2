@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_221150) do
+ActiveRecord::Schema.define(version: 2020_05_16_213744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 2020_05_15_221150) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "price_cents", default: 0, null: false
@@ -57,6 +69,21 @@ ActiveRecord::Schema.define(version: 2020_05_15_221150) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "neighborhood"
+    t.string "street"
+    t.string "number"
+    t.string "city"
+    t.string "state"
+    t.string "cellphone"
+    t.bigint "customer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "cep"
+    t.index ["customer_id"], name: "index_profiles_on_customer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,4 +102,5 @@ ActiveRecord::Schema.define(version: 2020_05_15_221150) do
   add_foreign_key "categories", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
+  add_foreign_key "profiles", "customers"
 end
