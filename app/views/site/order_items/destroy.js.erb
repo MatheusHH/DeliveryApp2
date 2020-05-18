@@ -1,0 +1,6 @@
+$(function () {
+  $('#carts').html("<%= escape_javascript(render('site/carts/cart')) %>")
+  $('#cart-item').html("<%= escape_javascript(render('site/carts/cart-item')) %>")
+
+  $.notify("Item was successfully deleted", {className: 'warning', globalPosition: 'top right'});
+});

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     get 'shoppings/index'
     resources :show_product, only: [:show]
     resources :by_category, only: [:show]
+    resources :order_items
+    resource :carts, only: [:show]
   end
   
   root 'site/shoppings#index'

@@ -1,0 +1,12 @@
+$(function () {
+  $('#carts').html("<%= escape_javascript(render('site/carts/cart')) %>")
+  $('#cart-item').html("<%= escape_javascript(render('site/carts/cart-item')) %>")
+
+  <% if @order_item.errors.any? %>
+    <% @order_item.errors.full_messages.each do |message| %>
+      $.notify("<%= message %>", "error");
+    <% end %>  
+  <% else %>
+    $.notify("Item was successfully updated", {className: 'info', globalPosition: 'top right'});
+  <% end %>
+}); 

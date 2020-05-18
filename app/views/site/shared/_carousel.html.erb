@@ -6,13 +6,25 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+      <% if @products_sample.first.image.attached? %> 
+        <%= image_tag @products_sample.first.image.variant(resize_to_limit: [900, 350]), class: "d-block img-fluid" %>
+      <% else %>
+        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+      <% end %> 
     </div>
     <div class="carousel-item">
-      <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+      <% if @products_sample.second.image.attached? %> 
+        <%= image_tag @products_sample.second.image.variant(resize_to_limit: [900, 350]), class: "d-block img-fluid" %>
+      <% else %>
+        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+      <% end %> 
     </div>
     <div class="carousel-item">
-      <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+      <% if @products_sample.third.image.attached? %> 
+        <%= image_tag @products_sample.third.image.variant(resize_to_limit: [900, 350]), class: "d-block img-fluid" %>
+      <% else %>
+        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+      <% end %> 
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

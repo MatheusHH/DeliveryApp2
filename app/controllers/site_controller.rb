@@ -1,3 +1,3 @@
-class SiteController < ApplicationController
+class SiteController < SiteCustomerController
   layout 'customer_layout'
 end
