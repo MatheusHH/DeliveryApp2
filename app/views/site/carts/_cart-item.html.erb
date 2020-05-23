@@ -54,7 +54,27 @@
     <br>
     
     <div class="card-footer">
-      <div><h5>Subtotal: <%= humanized_money_with_symbol current_order.subtotal %></h5></div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div><h5>Subtotal: <%= humanized_money_with_symbol current_order.subtotal %></h5></div>
+        </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-3">
+          <% if customer_signed_in? %>
+            <% if current_order.id.present? %>
+              <%= link_to customer_free_checkout_path(current_order.id), class: "btn btn-success" do %>
+                <i class="fas fa-shopping-basket"></i>
+                <span>Finish</span>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to new_customer_session_path, class: "btn btn-warning" do %>
+              <i class="fas fa-sign-in-alt"></i>
+              <span>Login to continue</span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>  
 </div>
