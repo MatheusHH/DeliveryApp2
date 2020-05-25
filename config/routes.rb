@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     root 'orders#index'
 
     resources :edit_profile, only: [:edit, :update]
-    resources :free_checkout, only: [:show]
+    resources :free_checkout, only: [:show] do 
+      member do
+        resources :deliveries, only: [:create]
+      end
+    end
   end
   
   namespace :site do

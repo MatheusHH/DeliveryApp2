@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_173427) do
+ActiveRecord::Schema.define(version: 2020_05_25_215719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2020_05_18_173427) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "deliveries", force: :cascade do |t|
+    t.text "details"
+    t.bigint "order_id", null: false
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_deliveries_on_order_id"
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "product_id", null: false
@@ -74,10 +83,10 @@ ActiveRecord::Schema.define(version: 2020_05_18_173427) do
   create_table "orders", force: :cascade do |t|
     t.integer "subtotal_cents", default: 0, null: false
     t.string "subtotal_currency", default: "BRL", null: false
-    t.integer "delivery_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "customer_id"
+    t.integer "status"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
@@ -124,6 +133,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_173427) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
+  add_foreign_key "deliveries", "orders"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "customers"

@@ -80,15 +80,23 @@
           <div class="col-sm-3">
             <div><h5>Subtotal: <%= humanized_money_with_symbol @order.subtotal %></h5></div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-9">
           </div>
-          <div class="col-sm-3">
-            <%= link_to  "#", class: "btn btn-success btn-sm" do %>
-              <i class="fas fa-truck"></i>
-              <span>Send Order</span>
-            <% end %>
-          <div>
         </div>
+ 
+        <%= form_with(url: "/customer/free_checkout/#{@order.id}/deliveries" , method: "post", local: true) do |f| %>
+          <%= f.hidden_field :order_id, value: @order.id %>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <%= f.text_area :details, class: "form-control", placeholder: "Digite aqui alguma observação com relação ao seu pedido!", rows: 3 %>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit "Send Order", class: "btn btn-success btn-block btn-sm" %>
+          </div>
+        <% end %>
       </div>
     </div>  
   </div>
