@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   has_one :delivery
 
   monetize :subtotal_cents
-
+  enum status: [ :pendente, :fechado ]
 
   before_save :set_subtotal
 

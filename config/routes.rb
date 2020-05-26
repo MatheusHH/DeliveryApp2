@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   end
 
   namespace :customer do
-    get 'orders/index'
     root 'orders#index'
-
+    
+    resources :orders, only: [:index, :show]
     resources :edit_profile, only: [:edit, :update]
     resources :free_checkout, only: [:show] do 
       member do

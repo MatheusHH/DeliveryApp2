@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :profile
+  has_many :orders
 
   validates_associated :profile
   accepts_nested_attributes_for :profile, allow_destroy: true
