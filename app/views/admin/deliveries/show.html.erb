@@ -1,0 +1,102 @@
+<div class="card shadow p-3 mb-5">
+  <div class="card-header">Customer Data </div>
+  <div class="card-body">
+    <p>
+      <strong><%= Profile.human_attribute_name("name") %>:</strong>
+      <%= @delivery.order.customer.profile.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @delivery.order.customer.email %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("street") %>:</strong>
+      <%= @delivery.order.customer.profile.street %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("number") %>:</strong>
+      <%= @delivery.order.customer.profile.number %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("neighborhood") %>:</strong>
+      <%= @delivery.order.customer.profile.neighborhood %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("city") %>:</strong>
+      <%= @delivery.order.customer.profile.city %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("state") %>:</strong>
+      <%= @delivery.order.customer.profile.state %>
+    </p>
+    
+  </div>
+  <div class="card-footer">
+    
+  </div>
+</div>
+
+<div class="card shadow p-3 mb-5">
+  <div class="card-header">Order Items </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= Product.human_attribute_name("image") %></th>
+            <th><%= Product.human_attribute_name("name") %></th>
+            <th><%= Product.human_attribute_name("price") %></th>
+            <th><%= OrderItem.human_attribute_name("quantity") %></th>
+            <th><%= OrderItem.human_attribute_name("total") %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @delivery.order.order_items.each do |item| %>
+            <tr>
+              <td><%= image_tag item.product.image.variant(resize: "100x100") if item.product.image.attached? %></td>
+              <td><%= item.product.name %></td>
+              <td><%= humanized_money_with_symbol item.product.price %></td>
+              <td><%= item.quantity %></td>
+              <td>R$<%= formatted_value item.total %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+  </div>
+  <div class="card-footer">
+    <div><h5>Subtotal: <%= humanized_money_with_symbol @delivery.order.subtotal %></h5></div>
+  </div>
+</div>
+
+<div class="card shadow p-3 mb-5">
+  <div class="card-header">Delivery </div>
+  <div class="card-body">
+    <p>
+      <strong><%= Delivery.human_attribute_name("details") %>:</strong>
+      <%= @delivery.details %>
+    </p>
+
+    <p>
+      <strong><%= Category.human_attribute_name("status") %>:</strong>
+      <%= @delivery.status %>
+    </p>
+    
+  </div>
+  <div class="card-footer">
+    <div class="actions">
+      <%= link_to admin_deliveries_path, class: "btn btn-info btn-icon-split btn-sm" do %>
+        <span class="text"> Voltar</span>
+      <% end %>
+    </div>
+  </div>
+</div>

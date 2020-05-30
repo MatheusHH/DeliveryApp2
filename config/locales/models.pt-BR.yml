@@ -47,6 +47,7 @@ pt-BR:
           details: Observações
           status: Status
           order_id: Pedido
+          customer_id: Cliente
         order_item:
           quantity: Qnt
           product_id: Produto
