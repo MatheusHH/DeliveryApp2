@@ -114,11 +114,15 @@ pt-BR:
       new: Novo %{model}
       new(a): Nova %{model}
       back: Voltar
+      finish: Finalizar
+      login: Login para continuar
    
     helpers:
       submit:
         create: "Salvar"
         actions: Ações
+      my_data: Meus Dados
+      my_cart: Meu Carrinho
    
     confirm: Você tem certeza?
   

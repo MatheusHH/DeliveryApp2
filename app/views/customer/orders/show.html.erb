@@ -1,1 +1,42 @@
-<h6>Show Order<h6>
+<br>
+<div class="card shadow p-3 mb-5">
+  <div class="card-header" style="text-align: center">
+    <h3><%= Order.model_name.human(count: 1) %></h3>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= Product.human_attribute_name("image") %></th>
+            <th><%= Product.human_attribute_name("name") %></th>
+            <th><%= Product.human_attribute_name("price") %></th>
+            <th><%= OrderItem.human_attribute_name("quantity") %></th>
+            <th><%= t('helpers.submit.actions') %></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @order.order_items.each do |item| %>
+            <tr>
+              <td><%= image_tag item.product.image.variant(resize: "100x100") if item.product.image.attached? %></td>
+              <td><%= item.product.name %></td>
+              <td><%= humanized_money_with_symbol item.product.price %></td>
+              <td><%= item.quantity %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-sm-3">
+        <div><h5>Subtotal: <%= humanized_money_with_symbol @order.subtotal %></h5></div>
+      </div>
+      
+    </div>
+  </div>  
+</div>

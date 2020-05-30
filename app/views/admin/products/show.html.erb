@@ -37,13 +37,12 @@
       <strong><%= Product.human_attribute_name("user") %>:</strong>
       <%= @product.user.id %>
     </p>
-    
-    <div class="card-footer">
+  </div>
+  <div class="card-footer">
     <div class="actions">
       <%= link_to admin_products_path, class: "btn btn-info btn-icon-split btn-sm" do %>
         <span class="text"> Voltar</span>
       <% end %>
-    </div>
     </div>
   </div>
 </div>

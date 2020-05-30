@@ -10,18 +10,51 @@ pt-BR:
         product: 
           one: Produto
           other: Produtos
+        order:
+          one: Pedido
+          other: Pedidos
+        order_item:
+          one: Item
+          other: Itens
+        delivery: 
+          one: Entrega
+          other: Entregas
+        profile:
+          one: Perfil
+          other: Perfis
   
       attributes:
         user:
-          name: Nome
           email: Email
           role: Tipo de Usuário
+        profile:
+          name: Nome Completo
+          street: Rua
+          number: Número
+          state: Estado
+          city: Cidade
+          neighborhood: Bairro
+          cellphone: Nº Celular
         category:
           name: Nome
           active: Ativo
           user: Criador
+        order:
+          subtotal: Subtotal
+          status: Status
+          customer_id: Cliente
+        delivery:
+          details: Observações
+          status: Status
+          order_id: Pedido
+        order_item:
+          quantity: Qnt
+          product_id: Produto
+          order_id: Pedido
+          total: Total
+          unit_price: Preço Unit.
         product:
-          title: Nome
+          name: Nome
           image: Imagem
           description: Descrição
           price: Preço

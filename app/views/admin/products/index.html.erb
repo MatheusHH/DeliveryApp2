@@ -32,12 +32,11 @@
     </div>
 
     <br>
-    
-    <div class="card-footer">
-      <%= link_to new_admin_product_path, class: "btn btn-primary btn-icon-split btn-sm" do %>
-       <i class="fas fa-plus"></i>
-       <span class="text"> <%= t('actions.new', model: @products.model_name.human) %></span>
-      <% end %>
-    </div>
+  </div>
+  <div class="card-footer">
+    <%= link_to new_admin_product_path, class: "btn btn-primary btn-icon-split btn-sm" do %>
+      <i class="fas fa-plus"></i>
+      <span class="text"> <%= t('actions.new', model: @products.model_name.human) %></span>
+    <% end %>
   </div>  
 </div>

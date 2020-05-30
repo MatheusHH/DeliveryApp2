@@ -1,0 +1,14 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        notice: "%{model} criado com sucesso !"
+        notice(a): "%{model} criada com sucesso !"
+        payment: "Seu Pedido foi pago com sucesso, obrigado ;) !"
+      update:
+        notice: "%{model} foi atualizado com sucesso !"
+        notice(a): "%{model} criada com sucesso !"
+      destroy:
+        notice: "Apagado com sucesso !"
+        alert: "Registro não pode ser destruído !"
+    unauthorized: "Você não tem autorização para realizar esta ação ou a página não existe !"

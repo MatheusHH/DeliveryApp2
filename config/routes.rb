@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :edit_profile, only: [:edit, :update]
     resources :free_checkout, only: [:show] do 
       member do
-        resources :deliveries, only: [:create]
+        resources :deliveries, only: [:index, :create]
       end
     end
   end

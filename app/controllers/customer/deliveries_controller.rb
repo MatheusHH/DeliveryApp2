@@ -1,12 +1,17 @@
 class Customer::DeliveriesController < CustomersController
   before_action :authenticate_customer!
+  before_action :set_order, only: [:index]
+
+  def index
+    @delivery = @order.delivery
+  end
 
   def create
     @delivery = Delivery.new(delivery_params)
     @delivery.status = 0
     respond_to do |format|
       if @delivery.save  
-        format.html { redirect_to customer_order_path(@delivery.order.id), notice: t('flash.actions.create.notice', model: @delivery.model_name.human) }
+        format.html { redirect_to customer_deliveries_path, notice: t('flash.actions.create.notice', model: @delivery.model_name.human) }
         format.json { render :show, status: :created, location: @delivery }
         format.js {}
         current_order.fechado!
@@ -22,6 +27,10 @@ class Customer::DeliveriesController < CustomersController
   private
 
     def delivery_params
-      params.permit(:order_id, :details, :status)
+      params.permit(:id, :order_id, :details, :status)
+    end
+
+    def set_order
+      @order = current_customer.orders.last
     end
 end

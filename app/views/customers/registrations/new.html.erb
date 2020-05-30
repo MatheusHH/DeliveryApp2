@@ -29,8 +29,11 @@
 
                   <%= f.fields_for :profile do |ff| %>
                     <div class="form-group row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
+                      <div class="col-sm-3 mb-3 mb-sm-0">
                         <%= ff.text_field :cep, class: "form-control form-control-user", placeholder: "Digite o CEP", require: true %>
+                      </div>
+                       <div class="col-sm-3 mb-3 mb-sm-0">
+                        <%= ff.text_field :number, class: "form-control form-control-user", placeholder: "Digite o Número", require: true %>
                       </div>
                       <div class="col-sm-6">
                         <%= ff.text_field :street, class: "form-control form-control-user", placeholder: "Digite o nome da Rua", require: true %>
@@ -56,7 +59,36 @@
                     </div>
 
                     <div class="form-group">
-                      <%= render_states_devise("state")  %>
+                      <%= ff.select :state, options_for_select([
+                        ["Acre", "AC"],
+                        ["Alagoas", "AL"],
+                        ["Amapá", "AP"],
+                        ["Amazonas", "AM"],
+                        ["Bahia", "BA"],
+                        ["Ceará", "CE"],
+                        ["Distrito Federal", "DF"],
+                        ["Espírito Santo", "ES"],
+                        ["Goiás", "GO"],
+                        ["Maranhão", "MA"],
+                        ["Mato Grosso", "MT"],
+                        ["Mato Grosso do Sul", "MS"],
+                        ["Minas Gerais", "MG"],
+                        ["Pará", "PA"],
+                        ["Paraíba", "PB"],
+                        ["Paraná", "PR"],
+                        ["Pernambuco", "PE"],
+                        ["Piauí", "PI"],
+                        ["Rio de Janeiro", "RJ"],
+                        ["Rio Grande do Norte", "RN"],
+                        ["Rio Grande do Sul", "RS"],
+                        ["Rondônia", "RO"],
+                        ["Roraima", "RR"],
+                        ["Santa Catarina", "SC"],
+                        ["São Paulo", "SP"],
+                        ["Sergipe", "SE"],
+                        ["Tocantins", "TO"]
+                      ]
+                      ), {prompt: "Estados"}, { class: "form-control", style: "border-radius: 10rem" }  %>
                     </div>
                   <% end %>
 
