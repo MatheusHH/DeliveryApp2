@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :deliveries, only: [:index, :edit, :update, :show]
+    resources :customers, only: [:index, :show]
   end
 
   namespace :customer do

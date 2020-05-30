@@ -1,0 +1,47 @@
+<div class="card shadow p-3 mb-5">
+  <div class="card-header">Customer Data </div>
+  <div class="card-body">
+    <p>
+      <strong><%= Profile.human_attribute_name("name") %>:</strong>
+      <%= @customer.profile.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @customer.email %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("street") %>:</strong>
+      <%= @customer.profile.street %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("number") %>:</strong>
+      <%= @customer.profile.number %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("neighborhood") %>:</strong>
+      <%= @customer.profile.neighborhood %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("city") %>:</strong>
+      <%= @customer.profile.city %>
+    </p>
+
+    <p>
+      <strong><%= Profile.human_attribute_name("state") %>:</strong>
+      <%= @customer.profile.state %>
+    </p>
+    
+  </div>
+  <div class="card-footer">
+    <div class="actions">
+      <%= link_to admin_customers_path, class: "btn btn-info btn-icon-split btn-sm" do %>
+        <span class="text"> Voltar</span>
+      <% end %>
+    </div>
+  </div>
+</div>
