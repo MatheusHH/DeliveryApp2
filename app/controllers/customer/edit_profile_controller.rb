@@ -18,7 +18,7 @@ class Customer::EditProfileController < CustomersController
   end
 
   private
-   
+    
     def set_customer
       @customer = Customer.find(params[:id])
     end

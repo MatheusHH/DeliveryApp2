@@ -1,0 +1,31 @@
+<div class="card shadow p-3 mb-5"> 
+  <div class="card-body">
+    <%= form_with(model: [:admin, delivery], url: admin_delivery_path(delivery), local: true) do |form| %>
+      <% if delivery.errors.any? %>
+        <div class="alert alert-alert" id="error_explanation">
+          <a href="#" data-dismiss="alert" class="close">×</a>
+          <h2><%= pluralize(delivery.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+          <% delivery.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %> 
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <%= form.select :status, Delivery.statuses.keys.to_a, {}, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <%= form.submit "Salvar", class: "btn btn-primary" %>
+        <%= link_to "Voltar", admin_deliveries_path, class: "btn btn-success" %>
+      </div> 
+    <% end %>
+  </div>
+</div>

@@ -21,6 +21,8 @@ gem 'money-rails', '~>1.12'
 gem 'webpacker', '~> 4.0'
 # Gem for PDF files
 gem 'prawn-rails'
+# Pagination
+gem 'kaminari'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
