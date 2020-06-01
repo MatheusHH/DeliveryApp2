@@ -3,7 +3,7 @@ class Customer::OrdersController < CustomersController
   before_action :set_order, only: [:show]
 
   def index
-    @orders = current_customer.orders.where(status: :fechado)
+    @orders = current_customer.orders.where(status: :fechado).page(params[:page]).per(5)
   end
 
   def show
