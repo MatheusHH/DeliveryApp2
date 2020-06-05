@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :products
     resources :deliveries, only: [:index, :edit, :update, :show]
     resources :customers, only: [:index, :show]
+    resources :edit_users, only: [:edit, :update]
   end
 
   namespace :customer do
