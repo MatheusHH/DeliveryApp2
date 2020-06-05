@@ -6,7 +6,11 @@
     <br>
     <div class="card">
       <div class="card-header">
-        <%= @products.first.category.name %>
+        <% if @products.size > 0 %>
+          <%= @products.first.category.name %>
+        <% else %>
+          Nenhum resultado encontrado :(
+        <% end %>
       </div>
     </div>
     <br>
