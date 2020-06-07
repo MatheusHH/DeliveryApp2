@@ -12,7 +12,6 @@
             <th><%= Product.human_attribute_name("name") %></th>
             <th><%= Product.human_attribute_name("price") %></th>
             <th><%= OrderItem.human_attribute_name("quantity") %></th>
-            <th><%= t('helpers.submit.actions') %></th>
           </tr>
         </thead>
 
@@ -21,7 +20,7 @@
             <tr>
               <td><%= image_tag item.product.image.variant(resize: "100x100") if item.product.image.attached? %></td>
               <td><%= item.product.name %></td>
-              <td><%= humanized_money_with_symbol item.product.price %></td>
+              <td><%= humanized_money_with_symbol item.unit_price %></td>
               <td><%= item.quantity %></td>
             </tr>
           <% end %>
@@ -36,7 +35,13 @@
       <div class="col-sm-3">
         <div><h5>Subtotal: <%= humanized_money_with_symbol @order.subtotal %></h5></div>
       </div>
-      
+      <div class="col-sm-6">
+      </div>
+      <div class="col-sm-3">
+        <%= link_to  customer_orders_path, class: "btn btn-success btn-block btn-sm" do %>
+          <span>Voltar</span>
+        <% end %>
+      </div>
     </div>
   </div>  
 </div>

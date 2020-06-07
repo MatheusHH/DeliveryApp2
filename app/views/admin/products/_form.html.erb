@@ -4,7 +4,7 @@
       <% if product.errors.any? %>
         <div class="alert alert-alert" id="error_explanation">
           <a href="#" data-dismiss="alert" class="close">×</a>
-          <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+          <h6><%= pluralize(product.errors.count, "error") %> <%= t("helpers.error") %></h6>
 
           <ul>
             <% product.errors.full_messages.each do |message| %>

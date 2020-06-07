@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_215719) do
+ActiveRecord::Schema.define(version: 2020_06_06_230320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_215719) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cep"
+    t.string "cpf"
     t.index ["customer_id"], name: "index_profiles_on_customer_id"
   end
 

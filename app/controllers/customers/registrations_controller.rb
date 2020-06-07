@@ -12,7 +12,7 @@ class Customers::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |customer|
-      customer.permit(:email, :password, :password_confirmation, profile_attributes: [:id, :cep, :neighborhood, :street, :city, :state, :cellphone, :name, :_destroy])
+      customer.permit(:email, :password, :password_confirmation, profile_attributes: [:id, :cep, :neighborhood, :street, :city, :state, :cellphone, :name, :cpf, :_destroy])
     end
   end
 end

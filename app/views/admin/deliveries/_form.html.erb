@@ -4,7 +4,7 @@
       <% if delivery.errors.any? %>
         <div class="alert alert-alert" id="error_explanation">
           <a href="#" data-dismiss="alert" class="close">×</a>
-          <h2><%= pluralize(delivery.errors.count, "error") %> prohibited this category from being saved:</h2>
+          <h6><%= pluralize(delivery.errors.count, "error") %> <%= t("helpers.error") %></h6>
 
           <ul>
           <% delivery.errors.full_messages.each do |message| %>

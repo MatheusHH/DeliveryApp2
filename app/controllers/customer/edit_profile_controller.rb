@@ -32,6 +32,6 @@ class Customer::EditProfileController < CustomersController
         params[:customer].delete(:password_confirmation)
       end
       
-      params.require(:customer).permit(:email, :password, :password_confirmation, profile_attributes: [:id, :name, :cellphone, :cep, :neighborhood, :street, :city, :state, :number, :_destroy])
+      params.require(:customer).permit(:email, :password, :password_confirmation, profile_attributes: [:id, :name, :cellphone, :cpf, :cep, :neighborhood, :street, :city, :state, :number, :_destroy])
     end
 end

@@ -9,7 +9,7 @@
 			<ul class="navbar-nav ml-auto">
 			  <div class="dropdown">
 					<button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Options
+						Opções
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<% if customer_signed_in? %>
@@ -18,11 +18,11 @@
 							<% end %>
 
 							<%= link_to customer_orders_path, class: "dropdown-item" do %> 
-								<span>My Orders</span>
+								<span>Meus Pedidos</span>
 							<% end %>
 						<% else %>
 							<%= link_to  customer_root_path, class: "dropdown-item" do %>
-								<span>Customers</span>
+								<span>Clientes</span>
 							<% end %>
 						<% end %>
 

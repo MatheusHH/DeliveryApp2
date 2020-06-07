@@ -9,6 +9,8 @@ class Product < ApplicationRecord
 
   enum status: [:ativo, :inativo]
 
+  validates :name, :description, :status, :price, presence: true
+
   def second
     self[1]
   end

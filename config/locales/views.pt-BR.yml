@@ -123,6 +123,7 @@ pt-BR:
         actions: Ações
       my_data: Meus Dados
       my_cart: Meu Carrinho
+      error: "erro(s) aconteceram e estão listados abaixo:"
    
     confirm: Você tem certeza?
   
