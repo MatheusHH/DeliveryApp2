@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:edit, :update, :new, :create]
 
   def index
     @products = Product.all.page(params[:page]).per(5)
@@ -53,6 +54,10 @@ class Admin::ProductsController < ApplicationController
   private
     def set_product
       @product = Product.find(params[:id])
+    end
+
+    def set_category
+      @category = Category.new
     end
 
     def product_params

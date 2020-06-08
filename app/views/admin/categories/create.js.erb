@@ -1,0 +1,13 @@
+$(function () {
+  <% if @category.errors.any? %>
+	  <% @category.errors.full_messages.each do |message| %>
+      $.notify("<%= message %>", "error");
+    <% end %> 
+  <% else %>
+    $.notify("Categoria adicionado com sucesso!", {className: 'success', globalPosition: 'top right'});
+    setTimeout(function(){ window.location.reload(); }, 1000);
+	  $('#newCategoryModal').modal('hide');
+  <% end %>
+});
+
+ 

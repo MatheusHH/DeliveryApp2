@@ -23,9 +23,11 @@ class Admin::CategoriesController < ApplicationController
       if @category.save
         format.html { redirect_to admin_categories_url, notice: t('flash.actions.create.notice(a)', model: @category.model_name.human) }
         format.json { render :show, status: :created, location: @category }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
