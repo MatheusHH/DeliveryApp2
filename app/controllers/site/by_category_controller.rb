@@ -7,7 +7,7 @@ class Site::ByCategoryController < SiteController
 
   private
    
-   def load_categories
-     @categories = Category.all
-   end
+    def load_categories
+      @categories = Category.order(:name)
+    end
 end

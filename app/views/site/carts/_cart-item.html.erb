@@ -28,13 +28,13 @@
                   
                   <div class="col-sm-6">
                     <%= f.hidden_field :product_id, value: item.product.id %>
-                    <div class="input-group mb-6">
+                    <div class="input-group input-group-sm mb-6 ">
                       <%= f.number_field :quantity, value: 1, min: 1, class: "form-control" %>
                       <div class="input-group-append">
-                        <%= button_tag type: 'submit', class: "btn btn-primary" do %>
+                        <%= button_tag type: 'submit', class: "btn btn-primary btn-circle btn-sm" do %>
                           <i class="fas fa-sync-alt"></i>
                         <% end %>
-                        <%= link_to site_order_item_path(item), class: "btn btn-danger", method: :delete, remote: true do %>
+                        <%= link_to site_order_item_path(item), class: "btn btn-danger btn-circle btn-sm", method: :delete, remote: true do %>
                           <i class="fas fa-trash"></i>
                         <% end %>
                       </div>

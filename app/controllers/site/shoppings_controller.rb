@@ -3,7 +3,7 @@ class Site::ShoppingsController < SiteController
   before_action :products_for_carousel
 
   def index
-    @products = Product.all 
+    @products = Product.where(status: :ativo) 
   end
 
   private

@@ -3,7 +3,11 @@ class Customer::EditProfileController < CustomersController
   before_action :set_customer
 
   def edit
-    @customer.build_profile unless @customer.profile.present?
+    unless @customer.id == current_customer.id
+      redirect_to edit_customer_edit_profile_path(current_customer)
+    else
+      @customer.build_profile unless @customer.profile.present?
+    end
   end
 
   def update

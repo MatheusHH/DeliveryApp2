@@ -11,7 +11,7 @@ class Customer::DeliveriesController < CustomersController
     @delivery.status = 0
     respond_to do |format|
       if @delivery.save  
-        format.html { redirect_to customer_deliveries_path, notice: t('flash.actions.create.notice', model: @delivery.model_name.human) }
+        format.html { redirect_to customer_deliveries_path, notice: t('flash.actions.create.notice(a)', model: @delivery.model_name.human) }
         format.json { render :show, status: :created, location: @delivery }
         format.js {}
         current_order.fechado!

@@ -124,6 +124,7 @@ pt-BR:
       my_data: Meus Dados
       my_cart: Meu Carrinho
       error: "erro(s) aconteceram e estão listados abaixo:"
+      send_order: Enviar pedido
    
     confirm: Você tem certeza?
   

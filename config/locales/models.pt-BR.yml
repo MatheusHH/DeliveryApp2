@@ -22,6 +22,9 @@ pt-BR:
         profile:
           one: Perfil
           other: Perfis
+        customer: 
+          one: Cliente
+          other: Clientes
   
       attributes:
         user:

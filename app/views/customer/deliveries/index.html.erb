@@ -1,11 +1,16 @@
 <div class="card shadow p-3 mb-5">
-  <div class="card-header text-center">Delivery </div>
+  <div class="card-header text-center">Meu Pedido </div>
   <div class="card-body text-center">
-    <i class="fas fa-check-circle fa-7x"></i>
+    <i class="fas fa-check-circle fa-7x text-success"></i> 
   </div>
   <div class="card-footer">
     <div class="text-center"> 
-      <h4>Seu pedido foi enviado com sucesso !</h4>
+      <h5>Seu pedido de Nº<%= @order.id %> foi enviado com sucesso !</h5>
+    </div>
+    <div class="text-center"> 
+      <%= link_to customer_orders_path, class: "btn btn-success btn-block btn-sm" do %>
+        <span>Meus Pedidos</span>
+      <% end %>
     </div>
   </div>
 </div> 

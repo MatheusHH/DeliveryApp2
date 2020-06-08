@@ -7,6 +7,9 @@ class Customer::OrdersController < CustomersController
   end
 
   def show
+    unless @order.customer.id == current_customer.id
+      redirect_to customer_orders_path, alert: t("flash.unauthorized")
+    end
   end
 
   private
