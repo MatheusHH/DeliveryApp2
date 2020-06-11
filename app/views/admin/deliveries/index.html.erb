@@ -22,7 +22,7 @@
               <td><%= delivery.order.customer.profile.name %></td>
               <td><%= link_to edit_admin_delivery_path(delivery), class: "btn btn-info btn-circle" do %><i class="fa fa-edit"></i><% end %>
               <%= link_to admin_delivery_path(delivery), class: "btn btn-success btn-circle" do %><i class="fa fa-eye"></i><% end %>
-              <%= link_to admin_delivery_path(delivery, format: :pdf), class: "btn btn-danger btn-circle" do %><i class="far fa-file-pdf"></i><% end %>
+              <%= link_to admin_delivery_path(delivery, format: :pdf), target: "_blank", class: "btn btn-danger btn-circle" do %><i class="far fa-file-pdf"></i><% end %>
               </td>
             </tr>
           <% end %>

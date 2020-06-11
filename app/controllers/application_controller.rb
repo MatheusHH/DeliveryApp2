@@ -46,4 +46,9 @@ class ApplicationController < ActionController::Base
       root_path
     end
   end
+
+  def impossible_to_delete
+    flash[:alert] = t("flash.impossible_to_delete")
+    redirect_to(request.referrer || root_path)
+  end
 end

@@ -12,3 +12,4 @@ pt-BR:
         notice: "Apagado com sucesso !"
         alert: "Registro não pode ser destruído !"
     unauthorized: "Você não tem autorização para realizar esta ação ou a página não existe !"
+    impossible_to_delete: "Registro não pode ser deletado porque existem outros relacionados ! "

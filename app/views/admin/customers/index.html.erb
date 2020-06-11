@@ -19,7 +19,10 @@
               <td><%= customer.email %></td>
               <td><%= customer.profile.name %></td>
               <td>
-              <%= link_to admin_customer_path(customer), class: "btn btn-success btn-circle" do %><i class="fa fa-eye"></i><% end %>
+              <%= link_to admin_customer_path(customer), class: "btn btn-success btn-circle btn-sm" do %><i class="fa fa-eye"></i><% end %>
+              <%= link_to "https://wa.me/55#{customer.profile.cellphone}", target: "_blank", class: "btn btn-success btn-circle btn-sm" do %>
+                <i class="fab fa-whatsapp"></i>
+              <% end %>
               </td>
             </tr>
           <% end %>

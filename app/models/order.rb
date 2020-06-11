@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :customer, optional: true
-  has_many :order_items
+  has_many :order_items, dependent: :restrict_with_exception
   has_many :products, through: :order_items
   has_one :delivery
 
