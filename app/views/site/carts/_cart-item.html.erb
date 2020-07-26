@@ -60,14 +60,12 @@
       <div class="col-sm-3">
         <% if customer_signed_in? %>
           <% if current_order.id.present? %>
-            <%= link_to customer_free_checkout_path(current_order.id), class: "btn btn-success" do %>
-              <i class="fas fa-shopping-basket"></i>
+            <%= link_to customer_free_checkout_path(current_order.id), class: "btn btn-success btn-block btn-sm" do %>
               <span><%= t('actions.finish', model: Order.model_name.human) %></span>
             <% end %>
           <% end %>
         <% else %>
-          <%= link_to new_customer_session_path, class: "btn btn-warning" do %>
-            <i class="fas fa-sign-in-alt"></i>
+          <%= link_to new_customer_session_path, class: "btn btn-warning btn-block btn-sm" do %>
             <span><%= t('actions.login') %></span>
           <% end %>
         <% end %> 

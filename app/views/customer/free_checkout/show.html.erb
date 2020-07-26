@@ -1,46 +1,66 @@
 <br>
 <div class="card shadow p-3 mb-5">
   <div class="card-header text-center"><h5><%= t('helpers.my_data')%></h5> </div>
-  <div class="card-body"> 
-    <p>
-      <strong><%= Profile.human_attribute_name("name") %>:</strong>
-      <%= @order.customer.profile.name %>
-    </p>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-6"> 
+        <p>
+          <strong><%= Profile.human_attribute_name("name") %>:</strong>
+          <%= @order.customer.profile.name %>
+        </p>
+      </div>
+      <div class="col-sm-6"> 
+        <p>
+          <strong>Email:</strong>
+          <%= @order.customer.email %>
+        </p>
+      </div>
+    </div>
 
-    <p>
-      <strong>Email:</strong>
-      <%= @order.customer.email %>
-    </p>
+    <div class="row">
+      <div class="col-sm-6"> 
+        <p>
+          <strong><%= Profile.human_attribute_name("street") %>:</strong>
+          <%= @order.customer.profile.street %>
+        </p>
+      </div>
+      <div class="col-sm-6"> 
+        <p>
+          <strong><%= Profile.human_attribute_name("number") %>:</strong>
+          <%= @order.customer.profile.number %>
+        </p>
+      </div>
+    </div>
 
-    <p>
-      <strong><%= Profile.human_attribute_name("street") %>:</strong>
-      <%= @order.customer.profile.street %>
-    </p>
+    <div class="row">
+      <div class="col-sm-6"> 
+        <p>
+          <strong><%= Profile.human_attribute_name("neighborhood") %>:</strong>
+          <%= @order.customer.profile.neighborhood %>
+        </p>
+      </div>
+      <div class="col-sm-6"> 
+        <p>
+          <strong><%= Profile.human_attribute_name("city") %>:</strong>
+          <%= @order.customer.profile.city %>
+        </p>
+      </div>
+    </div>
 
-    <p>
-      <strong><%= Profile.human_attribute_name("number") %>:</strong>
-      <%= @order.customer.profile.number %>
-    </p>
-
-    <p>
-      <strong><%= Profile.human_attribute_name("neighborhood") %>:</strong>
-      <%= @order.customer.profile.neighborhood %>
-    </p>
-
-    <p>
-      <strong><%= Profile.human_attribute_name("city") %>:</strong>
-      <%= @order.customer.profile.city %>
-    </p>
-
-    <p>
-      <strong><%= Profile.human_attribute_name("state") %>:</strong>
-      <%= @order.customer.profile.state %>
-    </p>
-
-    <p>
-      <strong><%= Profile.human_attribute_name("cellphone") %>:</strong>
-      <%= @order.customer.profile.cellphone %>
-    </p>
+    <div class="row">
+      <div class="col-sm-6"> 
+       <p>
+        <strong><%= Profile.human_attribute_name("state") %>:</strong>
+        <%= @order.customer.profile.state %>
+      </p>
+      </div>
+      <div class="col-sm-6"> 
+        <p>
+          <strong><%= Profile.human_attribute_name("cellphone") %>:</strong>
+          <%= @order.customer.profile.cellphone %>
+        </p>
+      </div>
+    </div>
     
     </div>
   </div>

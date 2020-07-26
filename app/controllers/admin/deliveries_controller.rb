@@ -3,7 +3,8 @@ class Admin::DeliveriesController < ApplicationController
   before_action :set_delivery, only: [:edit, :update, :show]
 
   def index
-    @deliveries = Delivery.order(:status).page(params[:page]).per(5)
+    @deliveries_pendentes = Delivery.pendente.order(created_at: :asc)
+    @deliveries_enviando = Delivery.enviando.order(created_at: :asc)
   end
 
   def edit

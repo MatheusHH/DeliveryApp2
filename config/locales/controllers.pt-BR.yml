@@ -7,7 +7,7 @@ pt-BR:
         payment: "Seu Pedido foi pago com sucesso, obrigado ;) !"
       update:
         notice: "%{model} foi atualizado com sucesso !"
-        notice(a): "%{model} criada com sucesso !"
+        notice(a): "%{model} atualizada com sucesso !"
       destroy:
         notice: "Apagado com sucesso !"
         alert: "Registro não pode ser destruído !"

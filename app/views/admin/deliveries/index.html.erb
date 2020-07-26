@@ -1,45 +1,45 @@
-<div class="card shadow p-3 mb-5">
-  <div class="card-header" style="text-align: center">
-    <h3><%= @deliveries.model_name.human(count: 2) %></h3>
-  </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th><%= @deliveries.human_attribute_name("details") %></th>
-            <th><%= @deliveries.human_attribute_name("status") %></th>
-            <th><%= @deliveries.human_attribute_name("customer_id") %></th>
-            <th><%= t('helpers.submit.actions') %></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @deliveries.each do |delivery| %>
-            <tr>
-              <td><%= delivery.details %></td>
-              <td><%= delivery.status %></td>
-              <td><%= delivery.order.customer.profile.name %></td>
-              <td><%= link_to edit_admin_delivery_path(delivery), class: "btn btn-info btn-circle" do %><i class="fa fa-edit"></i><% end %>
-              <%= link_to admin_delivery_path(delivery), class: "btn btn-success btn-circle" do %><i class="fa fa-eye"></i><% end %>
-              <%= link_to admin_delivery_path(delivery, format: :pdf), target: "_blank", class: "btn btn-danger btn-circle" do %><i class="far fa-file-pdf"></i><% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-
-    <hr>
-    <div class=row>
-      <div class="col-lg-4 col-md-6 mb-4"></div>
-        <div class="col-lg-4 col-md-6 mb-4" id="pagination">
-          <%= paginate @deliveries %>
-        </div>
-      <div class="col-lg-4 col-md-6 mb-4"></div>
-    </div>
-  </div>
-  <div class="card-footer">
-    
-  </div>  
+<h6 class="text-center">Pedidos Pendentes</h6>
+<div class="row">
+	<% @deliveries_pendentes.each do |pendente| %> 
+	  <div class="col-xl-3 col-sm-6 mb-3">
+	    <div class="card text-white bg-warning shadow p-3 mb-5">
+	      <div class="card-body">
+	      	<h5 class="card-title">Nº pedido: <%=  pendente.order.id %></h5>
+	        <div class="card-body-icon">
+	          <i class="fas fa-truck-loading fa-2x "></i>
+	        </div>
+	        <div class="mr-5"></div>
+	      </div>
+	      <%= link_to admin_delivery_path(pendente), class: "card-footer text-white clearfix small z-1" do %>
+	        <span class="float-left">Detalhes</span>
+	        <span class="float-right">
+	          <i class="fa fa-angle-right"></i>
+	        </span>
+	      <% end %> 
+	    </div>
+	  </div>
+	<% end %>
+</div>
+<hr>
+<h6 class="text-center">Pedidos Enviando</h6>
+<div class="row">
+	<% @deliveries_enviando.each do |enviando| %> 
+	  <div class="col-xl-3 col-sm-6 mb-3">
+	    <div class="card text-white bg-info shadow p-3 mb-5">
+	      <div class="card-body">
+	      	<h5 class="card-title">Nª pedido: <%=  enviando.order.id %></h5>
+	        <div class="card-body-icon">
+	          <i class="fas fa-truck-loading fa-2x "></i>
+	        </div>
+	        <div class="mr-5"></div>
+	      </div>
+	      <%= link_to admin_delivery_path(enviando), class: "card-footer text-white clearfix small z-1" do %>
+	        <span class="float-left">Detalhes</span>
+	        <span class="float-right">
+	          <i class="fa fa-angle-right"></i>
+	        </span>
+	      <% end %> 
+	    </div>
+	  </div>
+	<% end %>
 </div>

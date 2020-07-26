@@ -1,4 +1,4 @@
-<%= link_to site_carts_path, class: "btn btn-default btn-sm" do %> 
-  <i class="fas fa-cart-plus"></i>
-  <span class="badge">(<%= "#{current_order.order_items.size}" %>)</span></a></li>
+<%= link_to site_carts_path, class: "nav-link" do %> 
+  <i class="fas fa-cart-plus" style="color: white;"></i>
+  <span class="badge">(<%= "#{total_items_cart(current_order)}" %>)</span></li>
 <% end %>  

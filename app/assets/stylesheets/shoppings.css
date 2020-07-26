@@ -4,7 +4,11 @@
 }
 
 #content_shopping {
-  min-height: 900px;
+  min-height: 820px;
+}
+
+.nav-item span {
+  color: white;
 }
 
 @media only screen and (max-width: 768px) {

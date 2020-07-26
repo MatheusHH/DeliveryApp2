@@ -6,4 +6,12 @@ module ApplicationHelper
       Order.new
     end
   end
+
+  def total_items_cart(cart)
+    total = 0
+    cart.order_items.each do |item|
+      total += item.quantity
+    end
+    total
+  end
 end
